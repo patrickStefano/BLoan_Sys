@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La_Puissance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'style/busness.css' %}">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    .accueili {
+      width: 100%;
+      height: 100vh;
+      background-image: url("{% static 'photos/bleu.avif'%}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+   
+    
+    }
+
+    .pieds {
+      width: 100%;
+      height: 53vh;
+      background-image: url("{% static 'photos/piied.png'%}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+{% if messages %}
+ {% for message in messages %}
+  {{message}}
+ {% endfor %}
+{% endif %}
+
+
+  <div class="accueili" id="accueil">
+    <div class="immge">
+      <a href="#"><img src="{% static 'photos/loggo.png'%}" alt=""></a>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Accueil
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Navider Ici</a></li>
+
+
+      </ul>
+
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        A propos
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Services</a></li>
+        <li><a class="dropdown-item" href="#">Partenaires</a></li>
+        <li><a class="dropdown-item" href="#">Vision</a></li>
+        <li><a class="dropdown-item" href="#">Mission</a></li>
+      </ul>
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        contact
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Phone</a></li>
+        <li><a class="dropdown-item" href="#">Email</a></li>
+        <li><a class="dropdown-item" href="#pieds">Localisation</a></li>
+
+      </ul>
+
+    </div>
+    
+    <div class="ecrire">
+      <h2>La Meilleure Solution <br />D'aide Etrangere</h2>
+      <p class="paragraph">Nous aidons des personnes qui ont<br />
+        besoins immediate et n'eyant pas la <br />
+        La possibilite de contacter leur Garant. </p>
+      <a href="{% url 'authenticite' %}">
+        <button type="button">Enregistrez-vous</button>
+      </a>
+    </div>
+  </div>
+  <!-- la division pour le pied de page -->
+
+  <div class="pieds" id="piedss">
+    <div class="police">
+      <h3>Contatez</h3>
+      <ul class="aliste">
+        <li>Email: tps@gmail.com</li>
+        <li>phone: +250</li>
+        <li>autres...</li>
+      </ul>
+    </div>
+    <div class="police">
+      <h3>Partenaires</h3>
+      <ul class="aliste">
+        <li>Famille Daya</li>
+        <li>TTPS Bank</li>
+        <li>Volontaire</li>
+        <li>autres</li>
+      </ul>
+    </div>
+    <div class="police">
+      <h3>Localisation</h3>
+      <ul class="aliste">
+        <li>Kicukiro kk4045</li>
+      </ul>
+    </div>
+    <div class="police">
+      <h3>Reseaux Sociaux</h3>
+      <ul class="aliste">
+        <li>Les Liens</li>
+        <li><a href="https://www.linkedin.com/feed/">
+            <img src="{% static 'photos/fwite1.png'%}" alt="">
+            <img src="{% static 'photos/igram.png'%}" alt="">
+            <img src="{% static 'photos/likdin.webp'%}" alt="">
+            <img src="{% static 'photos/origin.png'%}" alt="">
+          </a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

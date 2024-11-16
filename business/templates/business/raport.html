@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilan</title>
+  <style>
+    body{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 0;
+      margin: 0;
+    }
+    .preteur{
+      width: 100%;
+      height: 160vh;
+      background-color: cadetblue;
+      display: flex;
+      flex-direction: column;
+    }
+    .polices{
+      width: 100%;
+      height: 50%;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .formm{
+      width: 100%;
+      height: 70%;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      }
+    .formale{
+      width: 500px;
+      height: 510px;
+      box-shadow: 2px 3px 3px black;
+      background-color: rgba(127, 255, 212, 0.587);
+      display: flex;
+      border-radius: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .formale input{
+      width: 350px;
+      height: 31px;
+      color: black;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      border-radius: 9px;
+      border: none;
+      margin-top: 0;
+    }
+    .formale label{
+      margin-bottom: 0;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .bouton3{
+      width: 150px;
+      height: 40px;
+      background-color: rgb(9, 9, 245);
+      color: black;
+      margin-left:100px;
+      margin-top: 9px;
+      border: none;
+      border-radius: 8px;
+    }
+   
+
+    .bouton3:hover {
+      background-color: rgb(5, 180, 159);
+      color: white;
+      transform: translateX(5px);
+
+    }
+    .decoo{
+      width: 150px;
+      height: 40px;
+      background-color: rgb(245, 68, 9);
+      color: rgb(255, 255, 255);
+      margin-left: 80%;
+      margin-top: 9px;
+      border: none;
+      border-radius: 7px;
+
+     
+    }
+    .bouton3:active {
+      background-color: rgb(7, 40, 255);
+      color: white;
+      transform: translateX(5px);
+    }
+
+   p{
+    font-size: 14px;
+    margin-top: 0;
+    text-align: center;
+   }
+   .formale p{
+    color: rgb(255, 0, 170);
+   }
+    
+  h3{
+    color: crimson;
+    text-shadow: 2px 2px 3px rgb(21, 1, 1);
+  }
+
+  </style>
+</head>
+<body>
+ <div class="preteur">
+  <div class="polices">
+    <a href="http://127.0.0.1:8000/business/#http://127.0.0.1:5502/business/templates/business/authenticite.html"><button type="button" class="decoo">Deconnexion</button></a>
+    <h3>BIENVENU SUR LA PAGE DES MODALITES</h3>
+    <h4>Lisez attentivement la police avant de vous enagager!</h4>
+    <p>
+      <bold>Police</bold><br/>
+      <bold>C'est une plateform certifiée et attestee donc il est recommendé de bien vouloir bien lire <br/>avant de proceder a l'enregistrement.</bold><br/>
+      - Remplissez le formulaire de Prêt.<br/>
+      - Contatez le Nous en cas de desgrement ou d'incomprehention.<br/>
+      - Chaque montant desiré correspond a un taux d'interet specific.<br/>
+      - L'emprunteur a le droit d'avoir au plus deux jours de tolérence en cas d'imprévu.<br/>
+      - Après ces jour du non rembourssement il/elle sera frapper par des penalitées donc la resistant conduira a des messure sevères<br/>
+
+
+    </p>
+  </div>
+  <div class="formm">
+    <form action="{% url 'raport' %}" method="POST" class="formale">
+      {% csrf_token %}
+      <label for="">Noms: </label><input type="text" id="noms" name="noms" placeholder="entrez votre nom" required><br/>
+      
+      <label for="">Telephone</label>
+      <input type="number" id="phone" name="telephone" placeholder="entrez votre tell" required><br/>
+      <label for="">Emprun</label>
+      <input type="number" id="emprun" name="emprun" placeholder="la somme que vous desirez" required><br/>
+      <label for="">La Date De Sortie</label>
+      <input type="date" id="datS" name="dateS" placeholder="selectionner la date du jour" required><br/>
+      <label for="">Date D'entree</label>
+      <input type="date" id="date2" name="date2" placeholder="selectionez la date de remboursement" required><br/>
+      <p class="fichier">Photocopie de votre passport ici:  <input type="file" id="file" name="file" placeholder="photocopie de votre oassport ici" required><br/></p>
+      
+      <button type="submit" class="bouton3">Enregistrez-Vous</button>
+    </form>
+  </div>
+  
+ </div>
+
+
+
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="iccon"
+      viewBox="0 0 16 16">
+      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+      <path
+        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+    </svg><br /> -->
+
+
+
+
+ 
+</body>
+</html>
+
